@@ -39,7 +39,7 @@ function taxes() {
         let tax = outDeduction * feeSingle1;
         console.log(tax);
         let result = document.getElementById("output");
-        result.innerHTML = tax;
+        result.innerHTML = tax + "$";
 
 
     } else if ((outDeduction > incomeCeil1) && (income <= incomeCeil2)) {   //Term < 40125$
@@ -51,7 +51,7 @@ function taxes() {
         let tax = previousTax + change;
         console.log(tax);
         let result = document.getElementById("output");
-        result.innerHTML = tax;
+        result.innerHTML = tax + "$";
 
     } else if ((outDeduction > incomeCeil2) && (income <= incomeCeil3)) {   // Term < 85525$
 
@@ -65,7 +65,7 @@ function taxes() {
         let tax1 = tax + change1;
         console.log(tax1);
         let result = document.getElementById("output");
-        result.innerHTML = tax1;
+        result.innerHTML = tax1 + "$";
         
     } else if ((outDeduction > incomeCeil3) &&  (income <= incomeCeil4)) {  //Term < 163300$
 
@@ -82,7 +82,7 @@ function taxes() {
         let tax2 = tax1 + change2;
         console.log(tax2);
         let result = document.getElementById("output");
-        result.innerHTML = tax2;
+        result.innerHTML = tax2 + "$";
 
     } else if ((outDeduction > incomeCeil4) && (income <= incomeCeil5)) {  //Term < 207350$
 
@@ -102,7 +102,7 @@ function taxes() {
         let tax3 = tax2 + change3;
         console.log(tax3);
         let result = document.getElementById("output");
-        result.innerHTML = tax3;
+        result.innerHTML = tax3 + "$";
 
     } else if ((outDeduction > incomeCeil5) && (income <= incomeFloor6)) {  //Term < 518400$
 
@@ -125,7 +125,7 @@ function taxes() {
         let tax4 = tax3 + change4;
         console.log(tax4);
         let result = document.getElementById("output");
-        result.innerHTML = tax4;
+        result.innerHTML = tax4 + "$";
 
     } else {                                                                //Term > 518400$
 
@@ -151,7 +151,7 @@ function taxes() {
         let tax5 = tax4 + change5;
         console.log(tax5);
         let result = document.getElementById("output");
-        result.innerHTML = tax5;
+        result.innerHTML = tax5 + "$";
 
     }
 
