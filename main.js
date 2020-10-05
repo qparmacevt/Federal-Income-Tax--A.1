@@ -8,13 +8,13 @@
 
 function taxes() {
     
-    const feeSingle1   = 0.01;
-    const feeSingle2   = 0.012;
-    const feeSingle3   = 0.022;
-    const feeSingle4   = 0.024;
-    const feeSingle5   = 0.032;
-    const feeSingle6   = 0.035;
-    const feeSingle7   = 0.037;
+    const feeSingle1   = 0.1;
+    const feeSingle2   = 0.12;
+    const feeSingle3   = 0.22;
+    const feeSingle4   = 0.24;
+    const feeSingle5   = 0.32;
+    const feeSingle6   = 0.35;
+    const feeSingle7   = 0.37;
 
     const incomeCeil1  = 9875;
     const incomeCeil2  = 40125;
@@ -37,7 +37,7 @@ function taxes() {
 
     } else if ((income > incomeCeil1) && (income <= incomeCeil2)) {
         
-        let previousTax = income * feeSingle1;
+        let previousTax = incomeCeil1 * feeSingle1;
         let difference = income - incomeCeil1;
         let change = difference * feeSingle2;
         let tax = previousTax + change;
@@ -47,7 +47,7 @@ function taxes() {
 
     } else if ((income > incomeCeil2) && (income <= incomeCeil3)) {
 
-        let previousTax = income * feeSingle1;
+        let previousTax = incomeCeil1 * feeSingle1;
         let difference = income - incomeCeil1;
         let change = difference * feeSingle2;
         let tax = previousTax + change;
@@ -60,7 +60,7 @@ function taxes() {
         
     } else if ((income > incomeCeil3) &&  (income <= incomeCeil4)) {
 
-        let previousTax = income * feeSingle1;
+        let previousTax = incomeCeil1 * feeSingle1;
         let difference = income - incomeCeil1;
         let change = difference * feeSingle2;
         let tax = previousTax + change;
@@ -76,7 +76,7 @@ function taxes() {
 
     } else if ((income > incomeCeil4) && (income <= incomeCeil5)) {
 
-        let previousTax = income * feeSingle1;
+        let previousTax = incomeCeil1 * feeSingle1;
         let difference = income - incomeCeil1;
         let change = difference * feeSingle2;
         let tax = previousTax + change;
@@ -95,7 +95,7 @@ function taxes() {
 
     } else if ((income > incomeCeil5) && (income <= incomeFloor6)) {
 
-        let previousTax = income * feeSingle1;
+        let previousTax = incomeCeil1 * feeSingle1;
         let difference = income - incomeCeil1;
         let change = difference * feeSingle2;
         let tax = previousTax + change;
