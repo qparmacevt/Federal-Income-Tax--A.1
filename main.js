@@ -8,7 +8,7 @@
 
 function taxes() {
     
-    const feeSingle1   = 0.1;
+    const feeSingle1   = 0.1;                                               //Brakets tax rates
     const feeSingle2   = 0.12;
     const feeSingle3   = 0.22;
     const feeSingle4   = 0.24;
@@ -16,7 +16,7 @@ function taxes() {
     const feeSingle6   = 0.35;
     const feeSingle7   = 0.37;
 
-    const incomeCeil1  = 9875;
+    const incomeCeil1  = 9875;                                              //Brakets Gradation
     const incomeCeil2  = 40125;
     const incomeCeil3  = 85525;
     const incomeCeil4  = 163300;
@@ -25,16 +25,16 @@ function taxes() {
     
     const deduction =  12400;
 
-    let income = parseFloat(document.getElementById("income").value);    //Getting the value
+    let income = parseFloat(document.getElementById("income").value);       //Getting the value
     console.log(income);
     var outDeduction = income - deduction;
 
-    if (income <= deduction) {
+    if (income <= deduction) {                                              //Term, for poor
 
         let result = document.getElementById("output");
         result.innerHTML = "You are so poor, too pay a tax ((";
 
-    } else if (outDeduction <= incomeCeil1){                  
+    } else if (outDeduction <= incomeCeil1){                                //Term < 9875$
 
         let tax = outDeduction * feeSingle1;
         console.log(tax);
@@ -42,7 +42,7 @@ function taxes() {
         result.innerHTML = tax;
 
 
-    } else if ((outDeduction > incomeCeil1) && (income <= incomeCeil2)) {
+    } else if ((outDeduction > incomeCeil1) && (income <= incomeCeil2)) {   //Term < 40125$
         
         
         let previousTax = outDeduction * feeSingle1;
@@ -53,7 +53,7 @@ function taxes() {
         let result = document.getElementById("output");
         result.innerHTML = tax;
 
-    } else if ((outDeduction > incomeCeil2) && (income <= incomeCeil3)) {
+    } else if ((outDeduction > incomeCeil2) && (income <= incomeCeil3)) {   // Term < 85525$
 
         
         let previousTax = outDeduction * feeSingle1;
@@ -67,7 +67,7 @@ function taxes() {
         let result = document.getElementById("output");
         result.innerHTML = tax1;
         
-    } else if ((outDeduction > incomeCeil3) &&  (income <= incomeCeil4)) {
+    } else if ((outDeduction > incomeCeil3) &&  (income <= incomeCeil4)) {  //Term < 163300$
 
         
         let previousTax = outDeduction * feeSingle1;
@@ -84,7 +84,7 @@ function taxes() {
         let result = document.getElementById("output");
         result.innerHTML = tax2;
 
-    } else if ((outDeduction > incomeCeil4) && (income <= incomeCeil5)) {
+    } else if ((outDeduction > incomeCeil4) && (income <= incomeCeil5)) {  //Term < 207350$
 
         
         let previousTax = outDeduction * feeSingle1;
@@ -104,7 +104,7 @@ function taxes() {
         let result = document.getElementById("output");
         result.innerHTML = tax3;
 
-    } else if ((outDeduction > incomeCeil5) && (income <= incomeFloor6)) {
+    } else if ((outDeduction > incomeCeil5) && (income <= incomeFloor6)) {  //Term < 518400$
 
         
         let previousTax = outDeduction * feeSingle1;
@@ -127,7 +127,7 @@ function taxes() {
         let result = document.getElementById("output");
         result.innerHTML = tax4;
 
-    } else {
+    } else {                                                                //Term > 518400$
 
         
         let previousTax = outDeduction * feeSingle1;
