@@ -42,10 +42,10 @@ function taxes() {
         result.innerHTML = tax + "$";
 
 
-    } else if ((outDeduction > incomeCeil1) && (income <= incomeCeil2)) {   //Term < 40125$
+    } else if ((outDeduction > incomeCeil1) && (outDeduction <= incomeCeil2)) {   //Term < 40125$
         
-        
-        let previousTax = outDeduction * feeSingle1;
+
+        let previousTax = incomeCeil1 * feeSingle1;
         let difference = outDeduction - incomeCeil1;
         let change = difference * feeSingle2;
         let tax = previousTax + change;
@@ -53,105 +53,73 @@ function taxes() {
         let result = document.getElementById("output");
         result.innerHTML = tax + "$";
 
-    } else if ((outDeduction > incomeCeil2) && (income <= incomeCeil3)) {   // Term < 85525$
+    } else if ((outDeduction > incomeCeil2) && (outDeduction <= incomeCeil3)) {   // Term < 85525$
 
         
-        let previousTax = outDeduction * feeSingle1;
-        let difference = outDeduction - incomeCeil1;
-        let change = difference * feeSingle2;
-        let tax = previousTax + change;
-        let difference1 = outDeduction - incomeCeil2;
-        let change1 = difference1 * feeSingle3;
-        let tax1 = tax + change1;
-        console.log(tax1);
+        let previousTax = incomeCeil1 * feeSingle1;
+        let previousTax2 = incomeCeil2 * feeSingle2;
+        let remain = outDeduction - incomeCeil1 - incomeCeil2;
+        let change = remain * feeSingle3;
+        let tax = previousTax + previousTax2 + change;
+        console.log(tax);
         let result = document.getElementById("output");
-        result.innerHTML = tax1 + "$";
+        result.innerHTML = tax + "$";
         
-    } else if ((outDeduction > incomeCeil3) &&  (income <= incomeCeil4)) {  //Term < 163300$
+    } else if ((outDeduction > incomeCeil3) &&  (outDeduction <= incomeCeil4)) {  //Term < 163300$
 
         
-        let previousTax = outDeduction * feeSingle1;
-        let difference = outDeduction - incomeCeil1;
-        let change = difference * feeSingle2;
-        let tax = previousTax + change;
-        let difference1 = outDeduction - incomeCeil2;
-        let change1 = difference1 * feeSingle3;
-        let tax1 = tax + change1;
-        let difference2 = outDeduction - incomeCeil3;
-        let change2 = difference2 * feeSingle4;
-        let tax2 = tax1 + change2;
-        console.log(tax2);
+        let previousTax = incomeCeil1 * feeSingle1;
+        let previousTax2 = incomeCeil2 * feeSingle2;
+        let previousTax3 = incomeCeil3 * feeSingle3;
+        let remain = outDeduction - incomeCeil1 - incomeCeil2 - incomeCeil3;
+        let change = remain * feeSingle4;
+        let tax = previousTax + previousTax2 + previousTax3 + change;
+        console.log(tax);
         let result = document.getElementById("output");
-        result.innerHTML = tax2 + "$";
+        result.innerHTML = tax + "$";
 
-    } else if ((outDeduction > incomeCeil4) && (income <= incomeCeil5)) {  //Term < 207350$
-
-        
-        let previousTax = outDeduction * feeSingle1;
-        let difference = outDeduction - incomeCeil1;
-        let change = difference * feeSingle2;
-        let tax = previousTax + change;
-        let difference1 = outDeduction - incomeCeil2;
-        let change1 = difference1 * feeSingle3;
-        let tax1 = tax + change1;
-        let difference2 = outDeduction - incomeCeil3;
-        let change2 = difference2 * feeSingle4;
-        let tax2 = tax1 + change2;
-        let difference3 = outDeduction - incomeCeil4;
-        let change3 = difference3 * feeSingle5;
-        let tax3 = tax2 + change3;
-        console.log(tax3);
-        let result = document.getElementById("output");
-        result.innerHTML = tax3 + "$";
-
-    } else if ((outDeduction > incomeCeil5) && (income <= incomeFloor6)) {  //Term < 518400$
+    } else if ((outDeduction > incomeCeil4) && (outDeduction <= incomeCeil5)) {  //Term < 207350$
 
         
-        let previousTax = outDeduction * feeSingle1;
-        let difference = outDeduction - incomeCeil1;
-        let change = difference * feeSingle2;
-        let tax = previousTax + change;
-        let difference1 = outDeduction - incomeCeil2;
-        let change1 = difference1 * feeSingle3;
-        let tax1 = tax + change1;
-        let difference2 = outDeduction - incomeCeil3;
-        let change2 = difference2 * feeSingle4;
-        let tax2 = tax1 + change2;
-        let difference3 = outDeduction - incomeCeil4;
-        let change3 = difference3 * feeSingle5;
-        let tax3 = tax2 + change3;
-        let difference4 = outDeduction - incomeCeil5;
-        let change4 = difference4 * feeSingle6;
-        let tax4 = tax3 + change4;
-        console.log(tax4);
+        let previousTax = incomeCeil1 * feeSingle1;
+        let previousTax2 = incomeCeil2 * feeSingle2;
+        let previousTax3 = incomeCeil3 * feeSingle3;
+        let previousTax4 = incomeCeil4 * feeSingle4;
+        let remain = outDeduction - incomeCeil1 - incomeCeil2 - incomeCeil3 - incomeCeil4;
+        let change = remain * feeSingle5;
+        let tax = previousTax + previousTax2 + previousTax3 + previousTax4 + change;
+        console.log(tax);
         let result = document.getElementById("output");
-        result.innerHTML = tax4 + "$";
+        result.innerHTML = tax + "$";
+
+    } else if ((outDeduction > incomeCeil5) && (outDeduction <= incomeFloor6)) {  //Term < 518400$
+
+        let previousTax = incomeCeil1 * feeSingle1;
+        let previousTax2 = incomeCeil2 * feeSingle2;
+        let previousTax3 = incomeCeil3 * feeSingle3;
+        let previousTax4 = incomeCeil4 * feeSingle4;
+        let previousTax5 = incomeCeil5 * feeSingle5;
+        let remain = outDeduction - incomeCeil1 - incomeCeil2 - incomeCeil3 - incomeCeil4 - incomeCeil5;
+        let change = remain * feeSingle6;
+        let tax = previousTax + previousTax2 + previousTax3 + previousTax4 + previousTax5 + change;
+        console.log(tax);
+        let result = document.getElementById("output");
+        result.innerHTML = tax + "$";
 
     } else {                                                                //Term > 518400$
 
-        
-        let previousTax = outDeduction * feeSingle1;
-        let difference = outDeduction - incomeCeil1;
-        let change = difference * feeSingle2;
-        let tax = previousTax + change;
-        let difference1 = outDeduction - incomeCeil2;
-        let change1 = difference1 * feeSingle3;
-        let tax1 = tax + change1;
-        let difference2 = outDeduction - incomeCeil3;
-        let change2 = difference2 * feeSingle4;
-        let tax2 = tax1 + change2;
-        let difference3 = outDeduction - incomeCeil4;
-        let change3 = difference3 * feeSingle5;
-        let tax3 = tax2 + change3;
-        let difference4 = outDeduction - incomeCeil5;
-        let change4 = difference4 * feeSingle6;
-        let tax4 = tax3 + change4;
-        let difference5 = outDeduction - incomeFloor6;
-        let change5 = difference5 * feeSingle7;
-        let tax5 = tax4 + change5;
-        console.log(tax5);
+        let previousTax = incomeCeil1 * feeSingle1;
+        let previousTax2 = incomeCeil2 * feeSingle2;
+        let previousTax3 = incomeCeil3 * feeSingle3;
+        let previousTax4 = incomeCeil4 * feeSingle4;
+        let previousTax5 = incomeCeil5 * feeSingle5;
+        let previousTax6 = incomeFloor6 * feeSingle6;
+        let remain = outDeduction - incomeCeil1 - incomeCeil2 - incomeCeil3 - incomeCeil4 - incomeCeil5 - incomeFloor6;
+        let change = remain * feeSingle7;
+        let tax = previousTax + previousTax2 + previousTax3 + previousTax4 + previousTax5 + previousTax6 + change;
+        console.log(tax);
         let result = document.getElementById("output");
-        result.innerHTML = tax5 + "$";
+        result.innerHTML = tax + "$";
 
     }
 
